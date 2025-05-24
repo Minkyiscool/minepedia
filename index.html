@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minepedia</title>
+  <style>
+    @font-face {
+      font-family: 'Mojangles';
+      src: url('mojangles.otf.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      background-image: url('stone.png');
+      background-repeat: repeat;
+      background-size: 50px 50px;
+      font-family: sans-serif;
+    }
+
+    .top-container {
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+
+    .top-center-image {
+      height: 120px;
+      width: auto;
+      display: block;
+    }
+
+    .animated-text {
+      position: absolute;
+      top: 50px;
+      left: 80%;
+      transform-origin: center;
+      transform: rotate(-20deg) scale(1);
+      font-family: 'Mojangles', sans-serif;
+      color: yellow;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 2;
+      animation: pulse 0.7s infinite ease-in-out;
+      white-space: nowrap;
+      text-shadow:
+        2px 2px 0 #000,
+        4px 4px 5px rgba(0,0,0,0.5);
+      user-select: none;
+    }
+
+    @keyframes pulse {
+      0%   { transform: rotate(-20deg) scale(1); }
+      50%  { transform: rotate(-20deg) scale(1.2); }
+      100% { transform: rotate(-20deg) scale(1); }
+    }
+
+    .content-box {
+      margin-top: 20px;
+      width: 100%;
+      height: 600px;
+      background-image: url('stone.png');
+      background-size: 50px 50px;
+      background-repeat: repeat;
+      position: relative;
+      overflow: auto;
+    }
+
+    .content-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content-text {
+      position: relative;
+      font-family: 'Times New Roman', Times, serif;
+      color: white;
+      padding: 30px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-container">
+    <img src="logo.png" alt="Logo" class="top-center-image" />
+    <div class="animated-text">How amazing is it?</div>
+  </div>
+
+  <div class="content-box">
+    <div class="content-text">
+      <h2>Welcome to Minepedia</h2>
+      <p>We're mining the pedia and finding some cool things about Minecraft!</p>
+      <p>Enjoy looking at our new wiki page!</p>
+    </div>
+  </div>
+</body>
+</html>
